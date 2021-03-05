@@ -16,6 +16,28 @@ console.log(coordinates); //{x: 10, y: 20};
 //  when we want a variable to have a type that can't be inferred
 //  when a function returns the 'any' type and we need to clarify the value
 
+
+// 2 When we declare a variable on one line and initialize it later
+let words = ['red', 'green', 'blue'];
+let foundWord: boolean;
+
+for (let i=0; i < words.length; i++) {
+  if (words[i] === 'green') {
+    foundWord = true;
+  }
+}
+
+// 3 Variable whose type cannot be inferred correctly
+let numbers = [-10, -1, 12];
+let numberAboveZero: boolean | number = false; //type annotation
+
+
+for (let i=0; i < numbers.length; i++) {
+  if(numbers[i] > 0) {
+    numberAboveZero = numbers[i];
+  }
+}
+
 // NOTE USE TYPE INFERENCE WHEN
 // ALWAYS!!!
 let apples: number = 5;
@@ -55,6 +77,4 @@ let point: {x: number, y:number} = {
 //  functions
 const logNumber: (i: number) => void = (i: number) => {
   console.log(i);
-  
 }
-
